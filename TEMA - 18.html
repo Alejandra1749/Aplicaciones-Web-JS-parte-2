@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Problema XVIII</title>
+</head>
+<body>
+    <button onclick="ejercicio1()">Mayor de tres</button>
+    <button onclick="ejercicio2()">Perímetro cuadrado</button>
+    <button onclick="ejercicio3()">Cantidad dígitos</button>
+    <button onclick="ejercicio4()">Promedio tres números</button>
+    <button onclick="ejercicio5()">Suma cinco números</button>
+
+    <script>
+        function ejercicio1(){
+            let a=parseInt(prompt("Número 1:"));
+            let b=parseInt(prompt("Número 2:"));
+            let c=parseInt(prompt("Número 3:"));
+            
+            let mayor=encontrarMayor(a,b,c);
+            alert("El mayor es: "+mayor);
+        }
+
+        function encontrarMayor(a,b,c){
+            let mayor=a;
+            if(b>mayor)mayor=b;
+            if(c>mayor)mayor=c;
+            return mayor;
+        }
+
+        function ejercicio2(){
+            let lado=parseInt(prompt("Lado del cuadrado:"));
+            let perimetro=calcularPerimetro(lado);
+            alert("Perímetro: "+perimetro);
+        }
+
+        function calcularPerimetro(lado){
+            return lado*4;
+        }
+
+        function ejercicio3(){
+            let num=parseInt(prompt("Número positivo (hasta 5 dígitos):"));
+            let digitos=contarDigitos(num);
+            alert("Tiene "+digitos+" dígitos");
+        }
+
+        function contarDigitos(num){
+            if(num<10)return 1;
+            if(num<100)return 2;
+            if(num<1000)return 3;
+            if(num<10000)return 4;
+            return 5;
+        }
+
+        function ejercicio4(){
+            let a=parseInt(prompt("Número 1:"));
+            let b=parseInt(prompt("Número 2:"));
+            let c=parseInt(prompt("Número 3:"));
+            
+            let promedio=calcularPromedio(a,b,c);
+            alert("Promedio: "+promedio);
+        }
+
+        function calcularPromedio(a,b,c){
+            return (a+b+c)/3;
+        }
+
+        function ejercicio5(){
+            let suma=sumarCinco();
+            alert("Suma: "+suma);
+        }
+
+        function sumarCinco(){
+            let total=0;
+            for(let i=1;i<=5;i++){
+                let num=parseInt(prompt("Número "+i+":"));
+                total=total+num;
+            }
+            return total;
+        }
+    </script>
+</body>
+</html>

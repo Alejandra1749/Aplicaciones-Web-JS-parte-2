@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        function regresarElDiaSemana(dia) {
+            switch (dia) {
+                case 0:
+                    return 'Domingo';
+                case 1:
+                    return 'Lunes';
+                case 2:
+                    return 'Martes';
+                case 3:
+                    return 'Miércoles';
+                case 4:
+                    return 'Jueves';
+                case 5:
+                    return 'Viernes';
+                case 6:
+                    return 'Sábado';
+                default:
+                    return 'día inválido';
+            }
+        }
+
+        function regresarElMes(mes) {
+            switch (mes) {
+                case 0:
+                    return 'Enero';
+                case 1:
+                    return 'Febrero';
+                case 2:
+                    return 'Marzo';
+                case 3:
+                    return 'Abril';
+                case 4:
+                    return 'Mayo';
+                case 5:
+                    return 'Junio';
+                case 6:
+                    return 'Julio';
+                case 7:
+                    return 'Agosto';
+                case 8:
+                    return 'Septiembre';
+                case 9:
+                    return 'Octubre';
+                case 10:
+                    return 'Noviembre';
+                case 11:
+                    return 'Diciembre';
+                default:
+                    return 'mes inválido';
+            }
+        }
+
+
+        function retornarFechaActual() {
+            let fechaActual = new Date();
+            let string = 'Hoy es ' + regresarElDiaSemana(fechaActual.getDay()) + ' ' + fechaActual.getDate() + ' de ' +
+                regresarElMes(fechaActual.getMonth()) + ' de ' + fechaActual.getFullYear();
+            return string;
+        }
+
+        document.write(retornarFechaActual());
+    </script>
+
+</body>
+</html>
