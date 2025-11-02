@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Edad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            max-width: 400px;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        button {
+            margin-top: 20px;
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>¿Eres mayor de 18 años?</h2>
+
+        <label>
+            <input type="radio" name="edad" id="mayor" value="si"> Sí, soy mayor de 18 años
+        </label>
+        <label>
+            <input type="radio" name="edad" id="menor" value="no"> No, soy menor de 18 años
+        </label>
+
+        <button onclick="verificarEdad()">Enviar</button>
+    </div>
+
+    <script>
+        function verificarEdad() {
+            const mayor = document.getElementById('mayor').checked;
+            const menor = document.getElementById('menor').checked;
+
+            if (!mayor && !menor) {
+                alert("Por favor, selecciona una opción.");
+                return;
+            }
+
+            if (mayor) {
+                alert("Puedes ingresar al sitio.");
+            } else {
+                alert("No puedes ingresar al sitio.");
+            }
+        }
+    </script>
+</body>
+</html>
