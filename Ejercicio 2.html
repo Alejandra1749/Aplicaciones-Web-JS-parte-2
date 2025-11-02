@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenar tres números</title>
+</head>
+<body>
+  <button onclick="solicitarYOrdenar()">Ingresar tres números</button>
+  <div id="resultado"></div>
+
+  <script>
+    // Función que recibe tres parámetros y muestra los números ordenados
+    function ordenarTres(a, b, c) {
+      const numeros = [a, b, c];
+      numeros.sort((x, y) => x - y); // Ordena de menor a mayor
+      return numeros;
+    }
+
+    // Función para manejar la entrada del usuario
+    function solicitarYOrdenar() {
+      const n1 = parseInt(prompt("Ingrese el primer número entero:"));
+      const n2 = parseInt(prompt("Ingrese el segundo número entero:"));
+      const n3 = parseInt(prompt("Ingrese el tercer número entero:"));
+
+      if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+        document.getElementById("resultado").textContent = "Por favor, ingrese tres números enteros válidos.";
+        return;
+      }
+
+      const ordenados = ordenarTres(n1, n2, n3);
+      document.getElementById("resultado").textContent = "Números ordenados: " + ordenados.join(", ");
+    }
+  </script>
+</body>
+</html>
