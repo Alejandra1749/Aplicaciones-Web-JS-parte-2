@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Promedio de Alturas</title>
+</head>
+<body>
+<h2>Calcular el promedio de 5 alturas</h2>
+<button onclick="calcularPromedio()">Ingresar alturas</button>
+<p id="resultado"></p>
+<script>
+function calcularPromedio() {
+  let suma = 0;
+  let cantidad = 5;
+  for (let i = 1; i <= cantidad; i++) {
+    let altura = parseFloat(prompt("Ingrese la altura de la persona " + i + " (en metros):"));
+    suma += altura;
+  }
+  let promedio = suma / cantidad;
+  document.getElementById("resultado").innerHTML =
+    "La altura promedio de las " + cantidad + " personas es: " + promedio.toFixed(2) + " metros.";
+}
+</script>
+</body>
+</html>

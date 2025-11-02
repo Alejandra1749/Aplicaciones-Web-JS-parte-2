@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Múltiplos de 10</title>
+</head>
+<body>
+<h2>Múltiplos de 10 hasta 1500</h2>
+<button onclick="mostrarMultiplos()">Mostrar</button>
+<p id="resultado"></p>
+<script>
+function mostrarMultiplos() {
+  let resultado = "";
+  for (let i = 10; i <= 1500; i += 10) {
+resultado += i + " - ";
+  }
+document.getElementById("resultado").innerHTML = resultado.slice(0, -3);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Serie de números</title>
+</head>
+<body>
+<h2>Serie: 5, 10, 15, 20, ... (20 términos)</h2>
+<button onclick="mostrarSerie()">Mostrar serie</button>
+<p id="resultado"></p>
+<script>
+function mostrarSerie() {
+  let resultado = "";
+  let termino = 5;
+  for (let i = 1; i <= 20; i++) {
+resultado += termino + " ";
+termino += 5;
+  }
+  document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
+</body>
+</html>
