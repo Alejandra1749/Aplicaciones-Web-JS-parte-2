@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control PASSWORD</title>
+</head>
+<body>
+
+    <p>Ingresa tu contraseña dos veces para validarla:</p>
+
+    <label for="password1">Contraseña:</label><br>
+    <input type="password" id="password1" placeholder="Ingresa tu contraseña"><br><br>
+
+    <label for="password2">Repetir Contraseña:</label><br>
+    <input type="password" id="password2" placeholder="Repite tu contraseña"><br><br>
+
+    <button onclick="validarContrasenas()">Mostrar resultado</button><br><br>
+
+    <div id="resultado"></div>
+
+    <script>
+        function validarContrasenas() {
+            const password1 = document.getElementById("password1").value;
+            const password2 = document.getElementById("password2").value;
+
+            if (password1 == password2) {
+                document.getElementById("resultado").innerHTML = 
+                    "<span style='color: green;'>✅ Las contraseñas coinciden.</span>";
+            } else {
+                document.getElementById("resultado").innerHTML = 
+                    "<span style='color: red;'>❌ Las contraseñas no coinciden.</span>";
+            }
+        }
+    </script>
+
+</body>
+</html>

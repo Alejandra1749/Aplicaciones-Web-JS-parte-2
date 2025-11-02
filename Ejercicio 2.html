@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 2 - Mayor de dos números</title>
+</head>
+<body>
+  <h2>Ejercicio 2: Mostrar el Mayor</h2>
+
+  <label>Primer número:</label>
+  <input type="text" id="num1"><br><br>
+
+  <label>Segundo número:</label>
+  <input type="text" id="num2"><br><br>
+
+  <button onclick="mostrarMayor()">Mostrar Mayor</button>
+  <button onclick="borrar()">Borrar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function mostrarMayor() {
+      let n1 = parseFloat(document.getElementById("num1").value);
+      let n2 = parseFloat(document.getElementById("num2").value);
+
+      if (isNaN(n1) || isNaN(n2)) {
+        document.getElementById("resultado").textContent = "Por favor, ingrese números válidos.";
+      } else if (n1 === n2) {
+        document.getElementById("resultado").textContent = "Ambos números son iguales.";
+      } else {
+        let mayor = (n1 > n2) ? n1 : n2;
+        document.getElementById("resultado").textContent = "El número mayor es: " + mayor;
+      }
+    }
+
+    function borrar() {
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("resultado").textContent = "";
+    }
+  </script>
+</body>
+</html>
+
