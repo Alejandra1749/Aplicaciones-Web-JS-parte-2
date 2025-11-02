@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Operaciones con String</title>
+</head>
+<body>
+  <pre id="salida"></pre>
+  <script>
+    let texto = prompt("Ingrese un texto:");
+
+    function primeraMitad(s) { return s.substring(0, Math.floor(s.length/2)); }
+    function ultimoChar(s) { return s[s.length-1]; }
+    function inverso(s) { return s.split('').reverse().join(''); }
+    function conGuiones(s) { return s.split('').join('-'); }
+    function contarVocales(s) {
+      return (s.match(/[aeiouáéíóú]/gi) || []).length;
+    }
+
+    let salida = `
+Primera mitad: ${primeraMitad(texto)}
+Último carácter: ${ultimoChar(texto)}
+Inverso: ${inverso(texto)}
+Con guiones: ${conGuiones(texto)}
+Vocales: ${contarVocales(texto)}
+    `.trim();
+    document.getElementById("salida").textContent = salida;
+  </script>
+  <a href="tema23.5.html">
+    <button>Ejercicio anterior</button>
+    </a>
+
+    <a href="tema23.7.html">
+    <button>Siguiente Ejercicio</button> 
+    </a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Búsqueda de Texto</title>
+</head>
+<body>
+  <script>
+    let texto = prompt("Ingrese el texto fuente:");
+    let clave = prompt("Clave a buscar:");
+    let pos = texto.indexOf(clave);
+    if (pos !== -1) {
+      alert(`Encontrada en posición: ${pos}`);
+    } else {
+      alert("No se encontró la clave");
+    }
+  </script>
+  <a href="tema23.2.html">
+    <button>Ejercicio anterior</button>
+    </a>
+
+    <a href="tema23.4.html">
+    <button>Siguiente Ejercicio</button> 
+    </a>
+</body>
+</html>

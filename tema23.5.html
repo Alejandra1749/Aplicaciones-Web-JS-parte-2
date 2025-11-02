@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validar Email</title>
+</head>
+<body>
+  <script>
+    function tieneArroba(email) {
+      return email.includes('@');
+    }
+
+    let email = prompt("Email:");
+    alert(tieneArroba(email) ? "Válido (tiene @)" : "Inválido (falta @)");
+  </script>
+  <a href="tema23.4.html">
+    <button>Ejercicio anterior</button>
+    </a>
+
+    <a href="tema23.6.html">
+    <button>Siguiente Ejercicio</button> 
+    </a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oración por líneas</title>
+</head>
+<body>
+  <pre id="salida"></pre>
+  <script>
+    let oracion = prompt("Ingrese una oración:");
+    let palabras = oracion.trim().split(/\s+/);
+    document.getElementById("salida").textContent = palabras.join('\n');
+  </script>
+  <a href="tema23.6.html">
+    <button>Ejercicio anterior</button>
+    </a>
+
+    <a href="tema23.1.html">
+    <button>Primer Ejercicio</button> 
+    </a>
+</body>
+</html>
