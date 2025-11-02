@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Ejercicio N1: Numero desde el menor hasta el mayor</h1>
+<script>
+    function mostrarRango() {
+        let menor;
+        let mayor;
+
+        menor = prompt('Escribe el numero menor:');
+        mayor = prompt('Escribe el numero mayor:');
+
+        menor = parseInt(menor);
+        mayor = parseInt(mayor);
+
+        document.write('Numeros ingresados: ' + menor + ' y ' + mayor + '<br>');
+
+        if (isNaN(menor) || isNaN(mayor)) {
+            document.write('Debes escribir numeros validos.');
+        } else if (menor >= mayor) {
+            document.write('El primer numero tiene que ser menor que el segundo.');
+        } else {
+            document.write('Del ' + menor + ' al ' + mayor + ' hay:<br>');
+            for (let i = menor; i <= mayor; i++) {
+                document.write(i + ', ');
+            }
+        }
+    }
+
+    mostrarRango();
+</script>
+</body>
+</html>
+
