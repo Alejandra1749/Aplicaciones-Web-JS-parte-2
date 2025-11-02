@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Problema 2 - Suma positivos</title>
+</head>
+<body>
+  <h2>Suma de números positivos</h2>
+  <p>Total: <span id="total"></span></p>
+
+  <script>
+    let valor, total = 0;
+    do {
+      valor = parseInt(prompt("Ingrese un número positivo :"));
+      if (valor > 0) {
+        total += valor;
+      }
+    } while (valor != 0);
+
+    document.getElementById("total").innerText = total;
+  </script>
+</body>
+</html>

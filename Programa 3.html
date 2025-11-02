@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Problema 3 - Clave 1234</title>
+</head>
+<body>
+  <h2>Ingrese la clave </h2>
+  <p id="mensaje"></p>
+
+  <script>
+    let clave;
+    do {
+      clave = prompt("Ingrese la clave de 4 dígitos:");
+      clave = parseInt(clave);
+      if (clave !== 1234) {
+        alert("Clave incorrecta. Intente de nuevo.");
+      }
+    } while (clave !== 1234);
+
+    document.getElementById("mensaje").innerHTML = 
+      "<strong style='color:green;'>Clave correcta. Acceso permitido.</strong>";
+  </script>
+</body>
+</html>
