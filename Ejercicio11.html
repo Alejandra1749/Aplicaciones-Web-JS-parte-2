@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tema 11</title>
+</head>
+<body>
+    <h2>Traductor de palabras (español → ingles)</h2>
+    <script>
+        let palabra = prompt("Ingresa una de estas palabras: casa, mesa, perro, gato").toLowerCase();
+
+        let traduccion;
+
+        switch (palabra) {
+            case "casa":
+                traduccion = "house";
+                break;
+            case "mesa":
+                traduccion = "table";
+                break;
+            case "perro":
+                traduccion = "dog";
+                break;
+            case "gato":
+                traduccion = "cat";
+                break;
+            default:
+                traduccion = "Palabra no reconocida. Por favor, ingresa una de las palabras indicadas.";
+        }
+        document.write(`<p>Traduccion: <strong>${traduccion}</strong></p>`);
+    </script>
+</body>
+</html>

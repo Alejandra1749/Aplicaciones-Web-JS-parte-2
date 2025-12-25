@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Contador de Notas</title>
+</head>
+<body>
+<h2>Escribir un programa que lea 10 notas de alumnos y nos informe cuántos tienen notas mayores o iguales a 7 y cuántos menores</h2>
+<button onclick="contarNotas()">Ingresar notas</button>
+<p id="resultado"></p>
+<script>
+function contarNotas() {
+  let mayores = 0;
+  let menores = 0;
+  for (let i = 1; i <= 10; i++) {
+    let nota = parseFloat(prompt("Ingrese la nota del alumno " + i + ":"));
+
+    if (nota >= 7) {
+      mayores++;
+    } else {
+      menores++;
+    }
+  }
+  document.getElementById("resultado").innerHTML =
+    "Alumnos con nota mayor o igual a 7: " + mayores + "<br>" +
+    "Alumnos con nota menor a 7: " + menores;
+}
+</script>
+</body>
+</html>
