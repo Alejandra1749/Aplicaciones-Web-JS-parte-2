@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 1 - Número al Cubo</title>
+</head>
+<body>
+  <h2>Ejercicio 1: Elevar al Cubo</h2>
+
+  <label>Ingrese un número:</label>
+  <input type="text" id="numero">
+  <button onclick="elevarCubo()">Calcular</button>
+  <button onclick="borrar()">Borrar</button>
+
+  <script>
+    function elevarCubo() {
+      let num = parseInt(document.getElementById("numero").value);
+      if (isNaN(num)) {
+        alert("Por favor ingrese un número válido.");
+      } else {
+        alert("El número elevado al cubo es: " + (num ** 3));
+      }
+    }
+
+    function borrar() {
+      document.getElementById("numero").value = "";
+    }
+  </script>
+</body>
+</html>
+

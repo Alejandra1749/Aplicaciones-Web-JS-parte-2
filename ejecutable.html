@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejecutor de Scripts JS (en Pantalla)</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f9;
+    }
+    h2, h3 {
+      color: #333;
+    }
+    p {
+      background-color: #eef;
+      border: 1px solid #cce;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    button {
+      display: block;
+      width: 300px;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    /* Estilos para la "pantalla" de resultados */
+    #output {
+      background-color: #282c34; /* Fondo oscuro */
+      color: #9fef9c;           /* Texto verde claro */
+      padding: 20px;
+      border-radius: 8px;
+      min-height: 100px;
+      font-family: "Consolas", "Monaco", monospace;
+      white-space: pre-wrap;     /* Para que respete los saltos de línea */
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Ejecutor de Scripts de Estructuras Repetitivas</h2>
+  <p>
+    Presiona un botón para ejecutar el script correspondiente.
+    <br>
+    Los resultados aparecerán en la "pantalla" de abajo.
+  </p>
+
+  <button onclick="script1()">1. Superficie Triángulos (EstructuraRepetitiva1.js)</button>
+  <button onclick="script2()">2. Suma Últimos 5 Números (EstructuraRepetitiva2.js)</button>
+  <button onclick="script3()">3. Tabla del 5 (EstructuraRepetitiva3.js)</button>
+  <button onclick="script4()">4. Tabla de Multiplicar (1-10) (EstructuraRepetitiva4.js)</button>
+  <button onclick="script5()">5. Tipos de Triángulos (EstructuraRepetitiva5.js)</button>
+  <button onclick="script6()">6. Coordenadas y Cuadrantes (EstructuraRepetitiva6.js)</button>
+  <button onclick="script7()">7. Análisis de 10 Números (EstructuraRepetitiva7.js)</button>
+  <button onclick="script8()">8. Promedio Edades Turnos (EstructuraRepetitiva8.js)</button>
+
+  <h3>Resultados en Pantalla:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    // --- Función de Ayuda para Escribir en Pantalla ---
+    const output = document.getElementById('output');
+
+    // Esta función limpia la pantalla y escribe en ella.
+    // 'message' es lo que queremos escribir.
+    function print(message) {
+      output.textContent += message + '\n'; // Añade el mensaje + un salto de línea
+    }
+    
+    // Esta función limpia la pantalla antes de ejecutar un script.
+    function clearOutput() {
+      output.textContent = '';
+    }
+
+    // --- Tus Scripts Modificados ---
+
+    // Contenido de EstructuraRepetitiva1.js
+    function script1() {
+      clearOutput(); // Limpia la pantalla
+      let mayor12 = 0;
+      for (let i = 1; i <= 3; i++) {
+        let base = parseFloat(prompt("Ingrese la base del triangulo " + i + ":"));
+        let altura = parseFloat(prompt("Ingrese la altura del triangulo " + i + ":"));
+        let superficie = (base * altura) / 2;
+        print(`Triangulo ${i}: base=${base}, altura=${altura}, superficie=${superficie}`);
+        if (superficie > 12) {
+          mayor12++;
+        }
+      }
+      print("--------------------");
+      print("Cantidad de triangulos con superficie mayor a 12: " + mayor12);
+    }
+
+    // Contenido de EstructuraRepetitiva2.js
+    function script2() {
+      clearOutput();
+      let numeros = [];
+      for (let i = 1; i <= 10; i++) {
+        numeros.push(parseInt(prompt("Ingrese numero " + i + ":")));
+      }
+      let suma = 0;
+      for (let i = 5; i < 10; i++) {
+        suma += numeros[i];
+      }
+      print("La suma de los ultimos 5 numeros es: " + suma);
+    }
+
+    // Contenido de EstructuraRepetitiva3.js
+    function script3() {
+      clearOutput();
+      print("--- Tabla del 5 ---");
+      for (let i = 1; i <= 10; i++) {
+        print(`5 x ${i} = ${5 * i}`);
+      }
+    }
+
+    // Contenido de EstructuraRepetitiva4.js
+    function script4() {
+      clearOutput();
+      let num = parseInt(prompt("Ingrese un numero del 1 al 10:"));
+      if (num >= 1 && num <= 10) {
+        print(`--- Tabla del ${num} ---`);
+        for (let i = 1; i <= 12; i++) {
+          print(`${num} x ${i} = ${num * i}`);
+        }
+      } else {
+        print("Error: Numero fuera de rango (debe ser entre 1 y 10).");
+      }
+    }
+
+    // Contenido de EstructuraRepetitiva5.js
+    function script5() {
+      clearOutput();
+      let equilatero = 0, isosceles = 0, escaleno = 0;
+      for (let i = 1; i <= 4; i++) {
+        let lado1 = parseFloat(prompt(`Ingrese el primer lado del triangulo ${i}:`));
+        let lado2 = parseFloat(prompt(`Ingrese el segundo lado del triangulo ${i}:`));
+        let lado3 = parseFloat(prompt(`Ingrese el tercer lado del triangulo ${i}:`));
+        if (lado1 === lado2 && lado2 === lado3) {
+          print(`Triangulo ${i}: equilatero`);
+          equilatero++;
+        } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+          print(`Triangulo ${i}: isosceles`);
+          isosceles++;
+        } else {
+          print(`Triangulo ${i}: escaleno`);
+          escaleno++;
+        }
+      }
+      print("--- Resumen ---");
+      print(`Equilateros: ${equilatero}`);
+      print(`Isosceles: ${isosceles}`);
+      print(`Escalenos: ${escaleno}`);
+      print("--------------------");
+      let menor = Math.min(equilatero, isosceles, escaleno);
+      if (menor === equilatero) print("Hay menos triangulos equilateros.");
+      else if (menor === isosceles) print("Hay menos triangulos isosceles.");
+      else print("Hay menos triangulos escalenos.");
+    }
+
+    // Contenido de EstructuraRepetitiva6.js
+    function script6() {
+      clearOutput();
+      let n = parseInt(prompt("Ingrese la cantidad de puntos a procesar:"));
+      let c1 = 0, c2 = 0, c3 = 0, c4 = 0;
+      for (let i = 1; i <= n; i++) {
+        let x = parseFloat(prompt("Ingrese coordenada X del punto " + i + ":"));
+        let y = parseFloat(prompt("Ingrese coordenada Y del punto " + i + ":"));
+        if (x > 0 && y > 0) c1++;
+        else if (x < 0 && y > 0) c2++;
+        else if (x < 0 && y < 0) c3++;
+        else if (x > 0 && y < 0) c4++;
+      }
+      print("--- Puntos por Cuadrante ---");
+      print(`1° cuadrante: ${c1}`);
+      print(`2° cuadrante: ${c2}`);
+      print(`3° cuadrante: ${c3}`);
+      print(`4° cuadrante: ${c4}`);
+    }
+
+    // Contenido de EstructuraRepetitiva7.js
+    function script7() {
+      clearOutput();
+      let negativos = 0, positivos = 0, multiplos15 = 0, sumaPares = 0;
+      for (let i = 1; i <= 10; i++) {
+        let num = parseInt(prompt("Ingrese el valor " + i + ":"));
+        if (num < 0) negativos++;
+        if (num > 0) positivos++;
+        if (num % 15 === 0) multiplos15++;
+        if (num % 2 === 0) sumaPares += num;
+      }
+      print("--- Análisis de Números ---");
+      print("Negativos: " + negativos);
+      print("Positivos: " + positivos);
+      print("Múltiplos de 15: " + multiplos15);
+      print("Suma de números pares: " + sumaPares);
+    }
+
+    // Contenido de EstructuraRepetitiva8.js
+    function script8() {
+      clearOutput();
+      let sumaM = 0, sumaT = 0, sumaN = 0;
+      
+      print("--- Turno Mañana ---");
+      for (let i = 1; i <= 5; i++) {
+        sumaM += parseInt(prompt("Edad del estudiante del turno mañana " + i + ":"));
+      }
+      
+      print("--- Turno Tarde ---");
+      for (let i = 1; i <= 6; i++) {
+        sumaT += parseInt(prompt("Edad del estudiante del turno tarde " + i + ":"));
+      }
+      
+      print("--- Turno Noche ---");
+      for (let i = 1; i <= 11; i++) {
+        sumaN += parseInt(prompt("Edad del estudiante del turno noche " + i + ":"));
+      }
+
+      let promM = sumaM / 5;
+      let promT = sumaT / 6;
+      let promN = sumaN / 11;
+      
+      print("--- Promedios de Edad ---");
+      print(`Promedio mañana: ${promM.toFixed(2)}`);
+      print(`Promedio tarde: ${promT.toFixed(2)}`);
+      print(`Promedio noche: ${promN.toFixed(2)}`);
+      print("--------------------");
+
+      if (promM > promT && promM > promN)
+        print("El turno mañana tiene el promedio mas alto.");
+      else if (promT > promN)
+        print("El turno tarde tiene el promedio mas alto.");
+      else
+        print("El turno noche tiene el promedio mas alto.");
+    }
+  </script>
+
+</body>
+</html>

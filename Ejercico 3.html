@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 3 - Concatenar Nombre y Apellido</title>
+</head>
+<body>
+  <h2>Ejercicio 3: Concatenar Nombre y Apellido</h2>
+
+  <label>Nombre:</label>
+  <input type="text" id="nombre"><br><br>
+
+  <label>Apellido:</label>
+  <input type="text" id="apellido"><br><br>
+
+  <label>Nombre completo:</label>
+  <input type="text" id="completo" readonly><br><br>
+
+  <button onclick="concatenar()">Concatenar</button>
+  <button onclick="borrar()">Borrar</button>
+
+  <script>
+    function concatenar() {
+      let nombre = document.getElementById("nombre").value.trim();
+      let apellido = document.getElementById("apellido").value.trim();
+
+      if (nombre === "" || apellido === "") {
+        alert("Por favor ingrese nombre y apellido.");
+      } else {
+        document.getElementById("completo").value = nombre + " " + apellido;
+      }
+    }
+
+    function borrar() {
+      document.getElementById("nombre").value = "";
+      document.getElementById("apellido").value = "";
+      document.getElementById("completo").value = "";
+    }
+  </script>
+</body>
+</html>
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Control CHECKBOX - Deportes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        .contenedor {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Selecciona tus deportes:</h2>
+
+        <label><input type="checkbox" id="futbol"> Fútbol</label><br>
+        <label><input type="checkbox" id="basket"> Básket</label><br>
+        <label><input type="checkbox" id="tenis"> Tenis</label><br><br>
+
+        <button onclick="mostrarDeportes()">Mostrar deportes elegidos</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function mostrarDeportes() {
+            let deportes = [];
+
+            if (document.getElementById("futbol").checked) {
+                deportes.push("Fútbol");
+            }
+            if (document.getElementById("basket").checked) {
+                deportes.push("Básket");
+            }
+            if (document.getElementById("tenis").checked) {
+                deportes.push("Tenis");
+            }
+
+            let resultado = document.getElementById("resultado");
+
+            if (deportes.length > 0) {
+                resultado.textContent = "Deportes elegidos: " + deportes.join(", ");
+            } else {
+                resultado.textContent = "No seleccionaste ningún deporte.";
+            }
+        }
+    </script>
+</body>
+</html>

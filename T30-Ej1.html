@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Página de Visitas</title>
+  <script>
+    function mostrarDatos() {
+      let nombre = document.getElementById("nombre").value;
+      let correo = document.getElementById("correo").value;
+      let comentarios = document.getElementById("comentarios").value;
+      
+      alert("Nombre: " + nombre + 
+            "\nCorreo: " + correo + 
+            "\nComentarios: " + comentarios);
+    }
+  </script>
+</head>
+    <body>
+        <h2>Página de Visitas</h2>
+  
+            Nombre: <input type="text" id="nombre"><br><br>
+            Correo: <input type="email" id="correo"><br><br>
+            Comentarios:<br>
+        <textarea id="comentarios" rows="5" cols="40"></textarea><br><br>
+  
+        <button onclick="mostrarDatos()">Mostrar Datos</button>
+    </body>
+</html>
