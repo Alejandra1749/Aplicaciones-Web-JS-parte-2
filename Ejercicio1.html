@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tema 3- funciones con parametros</title>
+</head>
+<body>
+  <button onclick="solicitarNumeros()">Ingresar tres números distintos</button>
+  <div id="resultado"></div>
+
+  <script>
+    //  Función que RECIBE parámetros y devuelve el menor
+    function encontrarMenor(a, b, c) {
+      let menor = a;
+      if (b < menor) menor = b;
+      if (c < menor) menor = c;
+      return menor;
+    }
+
+    // Función para manejar la entrada del usuario
+    function solicitarNumeros() {
+      const num1 = parseFloat(prompt("Ingrese el primer número:"));
+      const num2 = parseFloat(prompt("Ingrese el segundo número:"));
+      const num3 = parseFloat(prompt("Ingrese el tercer número:"));
+
+      if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+        document.getElementById("resultado").textContent = "Por favor, ingrese tres números válidos.";
+        return;
+      }
+
+      // Llamamos a la función 
+      const resultado = encontrarMenor(num1, num2, num3);
+      document.getElementById("resultado").textContent = "El menor es: " + resultado;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fechaActual = new Date();
+        let mes=fechaActual.getMonth(); // Los meses van de 0 a 11
+        if(mes<=3){
+            document.write("Estamos en el primer cuatrimestre del año");
+
+        }
+        else{
+            if(mes<=7){
+                document.write("Estamos en el segundo cuatrimestre del año");
+            }
+            else{
+                document.write("Estamos en el tercer cuatrimestre del año");
+            }
+        }
+
+    </script>
+</body>
+</html>
