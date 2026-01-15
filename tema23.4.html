@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palíndromo</title>
+</head>
+<body>
+  <script>
+    let palabra = prompt("Ingrese palabra:");
+    let limpia = palabra.toLowerCase().replace(/[^a-z]/g, '');
+    let invertida = limpia.split('').reverse().join('');
+    alert(limpia === invertida ? "ES palíndromo" : "NO es palíndromo");
+  </script>
+  <a href="tema23.3.html">
+    <button>Ejercicio anterior</button>
+    </a>
+
+    <a href="tema23.5.html">
+    <button>Siguiente Ejercicio</button> 
+    </a>
+</body>
+</html>

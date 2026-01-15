@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contar Nombres (insensible)</title>
+</head>
+<body>
+  <script>
+    let contador = 0;
+    let nombre;
+    do {
+      nombre = prompt("Nombre (fin/Fin/FIN para terminar):");
+      if (nombre.toLowerCase() !== "fin") contador++;
+    } while (nombre.toLowerCase() !== "fin");
+    alert("Nombres ingresados: " + contador);
+  </script>
+    <a href="tema23.1.html">
+    <button>Ejercicio anterior</button>
+    </a>
+
+    <a href="tema23.3.html">
+    <button>Siguiente Ejercicio</button> 
+    </a>
+</body>
+</html>
